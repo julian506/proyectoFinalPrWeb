@@ -5,6 +5,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\AdministradorController;
 use App\Http\Controllers\AutenticacionController;
 use App\Http\Controllers\AutenticacionAdminController;
+use App\Http\Controllers\DispositivoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,16 @@ Route::group(['middleware' => ['AutenticacionAdminCheck']], function () {
     Route::post('/admin/saveAdmin', [AutenticacionAdminController::class, 'saveAdmin'])->name('auth.saveAdmin');
 
 });
+
+
+// Rutas para el CRUD de dispositivos
+Route::get('/', [DispositivoController::class,'index']);
+
+Route::resource('admin/dispositivos',DispositivoController::class);
+// Route::get('/clientes/create', [ClienteController::class,'create'])->name('clientes.create');
+// Route::post('/clientes/store', [ClienteController::class,'store'])->name('clientes.store');
+// Route::get('/clientes/edit/{id}', [ClienteController::class,'edit'])->name('clientes.edit');
+// Route::patch('/clientes/update/{id}', [ClienteController::class,'update'])->name('clientes.update');
+// Route::delete('/clientes/destroy/{id}', [ClienteController::class,'destroy'])->name('clientes.destroy');
+// Route::get('/clientes/crearVenta/{id}', [ClienteController::class,'crearVenta'])->name('clientes.crearVenta');
+// Route::post('/clientes/registrarVenta', [ClienteController::class,'registrarVenta'])->name('clientes.registrarVenta');
