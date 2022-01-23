@@ -1,0 +1,10 @@
+/* Organizo estilos de la paginación del data-table */
+#example_paginate > ul > li.paginate_button.page-item {
+    background-color:rgb(209, 160, 160);
+}
+#example_paginate > ul > li.paginate_button.page-item a{
+    text-decoration: none;
+}
+#imagenDT {
+    width: 20%;
+}
