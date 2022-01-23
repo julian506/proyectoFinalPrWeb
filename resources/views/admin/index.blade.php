@@ -20,7 +20,8 @@
                 <h3 class="text-center">Panel de administrador</h3>
             </div>
             <div class="card-body">
-                Acá todo lo del CRUD
+                <h1> N° Dispositivos: {{ count($dispositivos) }}</h1>
+                @include('admin/dispositivos.datatable')
             </div>
         </div>
     </div>
