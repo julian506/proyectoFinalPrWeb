@@ -38,14 +38,14 @@ Route::group(['middleware' => ['AutenticacionAdminCheck']], function () {
     Route::get('/admin/panelAdministrador', [AdministradorController::class, 'panelPrincipal'])->name('admin.panelPrincipal');
     Route::get('/admin/registrarAdmin', [AdministradorController::class, 'registrarAdmin'])->name('admin.registrarNuevoAdmin');
     Route::post('/admin/saveAdmin', [AutenticacionAdminController::class, 'saveAdmin'])->name('auth.saveAdmin');
-
+    Route::resource('admin/dispositivos',DispositivoController::class);
 });
 
 
 // Rutas para el CRUD de dispositivos
-Route::get('/', [DispositivoController::class,'index']);
+// Route::get('/', [DispositivoController::class,'index']);
 
-Route::resource('admin/dispositivos',DispositivoController::class);
+
 // Route::get('/clientes/create', [ClienteController::class,'create'])->name('clientes.create');
 // Route::post('/clientes/store', [ClienteController::class,'store'])->name('clientes.store');
 // Route::get('/clientes/edit/{id}', [ClienteController::class,'edit'])->name('clientes.edit');
