@@ -18,6 +18,7 @@ class CreateDispositivosTable extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('precio');
+            $table->string('cantidad');
             $table->string('imagen');
             $table->timestamps();
         });

@@ -35,6 +35,7 @@
                     <th>Nombre</th>
                     <th>Descripción</th>
                     <th>Precio</th>
+                    <th>Cantidad</th>
                     <th>Imagen</th>
                     <th>Opciones</th>
                 </tr>
@@ -46,6 +47,7 @@
                         <td>{{ $dispositivo->nombre }}</td>
                         <td>{{ $dispositivo->descripcion }}</td>
                         <td>{{ $dispositivo->precio }}</td>
+                        <td>{{ $dispositivo->cantidad }}</td>
                         <td><img id="imagenDT" src="{{ asset('storage').'/'.$dispositivo->imagen}}" alt=""></td>
                         <td>
                             <a href="{{ route('dispositivos.edit', $dispositivo->id) }}">
@@ -69,6 +71,7 @@
                     <th>Nombre</th>
                     <th>Descripción</th>
                     <th>Precio</th>
+                    <th>Cantidad</th>
                     <th>Imagen</th>
                     <th>Opciones</th>
                 </tr>

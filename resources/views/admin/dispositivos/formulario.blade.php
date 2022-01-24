@@ -23,6 +23,11 @@
 			</div>
 
             <div class="col-md-8">
+				<label for="validationCustom02" class="form-label">Cantidad</label>
+				<input type="number" class="form-control" id="validationCustom02" name="cantidad" placeholder="Cantidad" required>
+			</div>
+
+            <div class="col-md-8">
 				<label for="ArchivoIMG" class="form-label">Archivo de Imagen</label>
 				<input type="file" class="form-control" id="ArchivoIMG" name="imagen" required>
 			</div>

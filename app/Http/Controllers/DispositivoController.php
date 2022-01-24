@@ -44,6 +44,7 @@ class DispositivoController extends Controller
         $dispositivo->nombre = $request->nombre;
         $dispositivo->descripcion = $request->descripcion;
         $dispositivo->precio = $request->precio;
+        $dispositivo->cantidad = $request->cantidad;
         if($request->hasFile('imagen')){
             $dispositivo->imagen = $request->file('imagen')->store('uploads','public');
         }
@@ -95,6 +96,7 @@ class DispositivoController extends Controller
         $dispositivo->nombre = $request->nombre;
         $dispositivo->descripcion = $request->descripcion;
         $dispositivo->precio = $request->precio;
+        $dispositivo->cantidad = $request->cantidad;
         //Si en el formulario se adjuntó una NUEVA foto...
         if($request->hasFile('imagen')){
             //Borramos de la carpeta public aquella imagen que tenga la misma ruta que $empleado->foto
