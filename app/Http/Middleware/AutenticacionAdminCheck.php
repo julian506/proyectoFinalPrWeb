@@ -19,7 +19,7 @@ class AutenticacionAdminCheck
         // Si no ha iniciado sesión y quiere entrar a alguna vista que no sea el login del administrador...
         //Se redirige al usuario a la vista de login del administrador con un mensaje de error
         if(!session()->has('LoggedAdmin') && ($request->path() != 'admin')){
-            return redirect('administrador')->with('fail', 'Debes haber iniciado sesión como administrador para poder acceder');
+            return redirect('admin')->with('fail', 'Debes haber iniciado sesión como administrador para poder acceder');
         }
         // Si ya se ha iniciado sesión y quiere ir al login del administrador...
         //Se deja al usuario en la misma página en que estaba
