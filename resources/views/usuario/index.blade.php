@@ -9,7 +9,7 @@
 			<div class="card-body">
                 <div class="container">
                     @foreach ($dispositivos as $dispositivo)
-                        @if($loop->iteration % 4 == 0 || $loop->iteration == 1)
+                        @if($loop->iteration % 3 == 0 || $loop->iteration == 1)
                             <div class="row">
                         @endif
                         <div class="col col-md-4 col-xs-12">
@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                         </div>
-                        @if($loop->iteration % 4 == 0)
+                        @if($loop->iteration % 3 == 0)
                             </div>
                         @endif
                     @endforeach
