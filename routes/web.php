@@ -35,7 +35,7 @@ Route::post('/admin/auth/logout', [AutenticacionAdminController::class, 'logoutA
 Route::group(['middleware' => ['AutenticacionAdminCheck']], function () {
     Route::get('/admin', [AutenticacionAdminController::class, 'index'])->name('auth.indexAdmin');
     Route::get('/admin/login', [AutenticacionAdminController::class, 'login'])->name('auth.loginAdmin');
-    Route::get('/admin/panelAdministrador', [AdministradorController::class, 'panelPrincipal'])->name('admin.panelPrincipal');
+    Route::get('/admin/panelAdministrador', [DispositivoController::class, 'index'])->name('admin.panelPrincipal');
     Route::get('/admin/registrarAdmin', [AdministradorController::class, 'registrarAdmin'])->name('admin.registrarNuevoAdmin');
     Route::post('/admin/saveAdmin', [AutenticacionAdminController::class, 'saveAdmin'])->name('auth.saveAdmin');
     Route::resource('admin/dispositivos',DispositivoController::class);
