@@ -67,13 +67,13 @@ class CreateDispositivosTable extends Migration
                 'cantidad' => 5,
                 'imagen' => 'uploads/TXP9Q8wfOj67rCzlSvCLnU2uKq6KfK9a41RgTXLb.jpg',
             ],
-            // [
-            //     'nombre' => '',
-            //     'descripcion' => '',
-            //     'precio' => ,
-            //     'cantidad' => ,
-            //     'imagen' => '',
-            // ],
+            [
+                'nombre' => 'Memoria Usb Maxell Metal 64gb',
+                'descripcion' => 'Memoria USB Metal, diseño pequeño, compacto y de bajo perfil con acabado de metal para mayor resistencia y duración Rápida transferencia de datos y contenidos Para uso general o diario en el trabajo, la escuela, el hogar y los viajes para fotos, música, videos, presentaciones, transferencia de archivos y almacenamiento general',
+                'precio' => 8,
+                'cantidad' => 50,
+                'imagen' => 'uploads/uBuRgjgUiuD9LF3OUxjiD38SnsjuBxong1hZOHdv.jpg',
+            ],
             // [
             //     'nombre' => '',
             //     'descripcion' => '',
