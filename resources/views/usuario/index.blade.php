@@ -8,11 +8,14 @@
 			</div>
 			<div class="card-body">
                 <div class="container">
+                    @php
+                        $cont = 1;
+                    @endphp
                     @foreach ($dispositivos as $dispositivo)
-                        @if($loop->iteration % 3 == 0 || $loop->iteration == 1)
-                            <div class="row">
+                        @if($cont == 1)
+                            <div class="row mt-3">
                         @endif
-                        <div class="col col-md-4 col-xs-12">
+                        <div class="col col-md-4">
                             <div class="card card-productos"  style="height: 100%;">
                                 <img src="{{ asset('storage').'/'.$dispositivo->imagen }}" class="card-img-top" style="width: 100%">
                                 <div class="card-body d-flex flex-column texto-card">
@@ -25,8 +28,14 @@
                                 </div>
                             </div>
                         </div>
-                        @if($loop->iteration % 3 == 0)
+                        @php
+                            $cont += 1;
+                        @endphp
+                        @if($cont > 3)
                             </div>
+                            @php
+                                $cont = 1;
+                            @endphp
                         @endif
                     @endforeach
                 </div>
