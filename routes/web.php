@@ -39,6 +39,7 @@ Route::group(['middleware' => ['AutenticacionAdminCheck']], function () {
     Route::get('/admin/registrarAdmin', [AdministradorController::class, 'registrarAdmin'])->name('admin.registrarNuevoAdmin');
     Route::post('/admin/saveAdmin', [AutenticacionAdminController::class, 'saveAdmin'])->name('auth.saveAdmin');
     Route::resource('admin/dispositivos',DispositivoController::class);
+    Route::get('admin/usuarios', [UsuarioController::class,  'index'])->name('admin.usuarios.index');//AX-Ruta para ir al crud de usuarios
 });
 
 
