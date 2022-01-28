@@ -12,4 +12,9 @@ class UsuarioController extends Controller
         $dispositivos = Dispositivo::where('cantidad', '>', 0)->paginate(6);
         return view('usuario.index', compact('dispositivos'));
     }
+    function index(){
+        $usuarios=Usuario::all();
+        return view('admin.usuarios.index')->with('usuarios',$usuarios);
+        //return view('admin.usuario.idex', compact('usuarios')); //Equivalente
+    }
 }
