@@ -61,6 +61,9 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @if (Session::has('LoggedAdmin'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.usuarios.index') }}">Usuarios</a>
+                        </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.registrarNuevoAdmin') }}">Registrar nuevo administrador</a>
                             </li>
