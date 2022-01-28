@@ -40,6 +40,7 @@ Route::group(['middleware' => ['AutenticacionAdminCheck']], function () {
     Route::post('/admin/saveAdmin', [AutenticacionAdminController::class, 'saveAdmin'])->name('auth.saveAdmin');
     Route::resource('admin/dispositivos',DispositivoController::class);
     Route::get('admin/usuarios', [UsuarioController::class,  'index'])->name('admin.usuarios.index');//AX-Ruta para ir al crud de usuarios
+    Route::get('admin/usuarios/crear', [UsuarioController::class,  'create'])->name('admin.usuarios.crear');
 });
 
 

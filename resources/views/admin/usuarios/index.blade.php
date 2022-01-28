@@ -1,6 +1,6 @@
 @extends('layouts.appAdmin')
 <div class="container text-center">
-    <a href="{{ route("dispositivos.create") }}">
+    <a href="{{ route("admin.usuarios.crear") }}">
         <button class="btn btn-success">
             Crear
         </button>
@@ -12,6 +12,7 @@
                 <th>Nombre</th>
                 <th>Apellidos</th>
                 <th>Correo</th>
+                <td>Opciones</td>
             </tr>
         </thead>
         <tbody>
@@ -21,7 +22,20 @@
                     <td>{{ $usuario->nombre }}</td>
                     <td>{{ $usuario->apellidos }}</td>
                     <td>{{ $usuario->correo }}</td>
+                    <td>
+                        <a >
+                            <button class="btn btn-primary">
+                                Editar
+                            </button>
+                        </a>
+                        {{-- Formulario de borrado --}}
+                        <form  method="post">
+                            @method('DELETE')
+                            @csrf
+                            <input class="btn btn-danger" type="submit" onclick="return confirm('¿Quieres borrar?')" value="Borrar">
+                        </form>
 
+                    </td>
 
                 </tr>
             @endforeach

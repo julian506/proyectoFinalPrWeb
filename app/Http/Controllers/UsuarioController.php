@@ -17,4 +17,7 @@ class UsuarioController extends Controller
         return view('admin.usuarios.index')->with('usuarios',$usuarios);
         //return view('admin.usuario.idex', compact('usuarios')); //Equivalente
     }
+    function create(){
+        return view('admin.usuarios.crear');
+    }
 }
