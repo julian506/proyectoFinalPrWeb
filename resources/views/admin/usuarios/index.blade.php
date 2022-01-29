@@ -23,7 +23,7 @@
                     <td>{{ $usuario->apellidos }}</td>
                     <td>{{ $usuario->correo }}</td>
                     <td>
-                        <a href="{{ route('usuarios.edit', $usuario->correo) }}">
+                        <a href="{{ route('usuarios.edit', $usuario->id) }}">
                             <button class="btn btn-primary">
                                 Editar
                             </button>

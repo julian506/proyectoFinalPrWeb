@@ -44,6 +44,7 @@ Route::group(['middleware' => ['AutenticacionAdminCheck']], function () {
     Route::post('admin/usuarios', [UsuarioController::class,  'store'])->name('admin.usuarios.guardar');
     Route::delete('admin/usuarios/{id}', [UsuarioController::class,  'destroy'])->name('admin.usuarios.destroy');
     Route::get('admin/usuarios/editar', [UsuarioController::class,  'edit'])->name('usuarios.edit');
+    Route::put('admin/usuarios/editar/{id}', [UsuarioController::class,  'update'])->name('usuarios.update');
 
 });
 

@@ -68,4 +68,19 @@ class UsuarioController extends Controller
         $usuario = Usuario::find($id);
         return view('admin.usuario.editar')->with('dispositivo',$usuario);
     }
+    public function update(Request $request,$id){
+
+        $validated =$request->validate([
+            'nombre' => 'required',
+            'apellidos'=>'required',
+            'correo' =>'required'
+        ]);
+
+        $usuario = Usuario::find($id);
+        $usuario->nombre = $request->nombre;
+        $usuario->apellidos = $request->apellidos;
+        $usuario->correo = $request->correo;
+        $usuario->save();
+        return redirect()->route('admin.usuarios.index');
+    }
 }
