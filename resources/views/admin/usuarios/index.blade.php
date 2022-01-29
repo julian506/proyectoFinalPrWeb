@@ -23,13 +23,13 @@
                     <td>{{ $usuario->apellidos }}</td>
                     <td>{{ $usuario->correo }}</td>
                     <td>
-                        <a >
+                        <a href="{{ route('usuarios.edit', $usuario->correo) }}">
                             <button class="btn btn-primary">
                                 Editar
                             </button>
                         </a>
                         {{-- Formulario de borrado --}}
-                        <form  method="post">
+                        <form  action="{{route('admin.usuarios.destroy',$usuario->correo)}}" method="post">
                             @method('DELETE')
                             @csrf
                             <input class="btn btn-danger" type="submit" onclick="return confirm('¿Quieres borrar?')" value="Borrar">

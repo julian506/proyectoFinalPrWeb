@@ -41,6 +41,10 @@ Route::group(['middleware' => ['AutenticacionAdminCheck']], function () {
     Route::resource('admin/dispositivos',DispositivoController::class);
     Route::get('admin/usuarios', [UsuarioController::class,  'index'])->name('admin.usuarios.index');//AX-Ruta para ir al crud de usuarios
     Route::get('admin/usuarios/crear', [UsuarioController::class,  'create'])->name('admin.usuarios.crear');
+    Route::post('admin/usuarios', [UsuarioController::class,  'store'])->name('admin.usuarios.crear');
+    Route::post('admin/usuarios', [UsuarioController::class,  'destroy'])->name('admin.usuarios.destroy');
+    Route::get('admin/usuarios/editar', [UsuarioController::class,  'edit'])->name('usuarios.edit');
+
 });
 
 
