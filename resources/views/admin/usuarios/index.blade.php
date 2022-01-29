@@ -29,7 +29,7 @@
                             </button>
                         </a>
                         {{-- Formulario de borrado --}}
-                        <form  action="{{route('admin.usuarios.destroy',$usuario->correo)}}" method="post">
+                        <form  action="{{route('admin.usuarios.destroy',$usuario->id)}}" method="post">
                             @method('DELETE')
                             @csrf
                             <input class="btn btn-danger" type="submit" onclick="return confirm('¿Quieres borrar?')" value="Borrar">
