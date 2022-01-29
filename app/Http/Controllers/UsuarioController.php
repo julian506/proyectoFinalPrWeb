@@ -66,7 +66,7 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         $usuario = Usuario::find($id);
-        return view('admin.usuario.editar')->with('dispositivo',$usuario);
+        return view('admin.usuarios.editar')->with('usuario',$usuario);
     }
     public function update(Request $request,$id){
 
