@@ -41,10 +41,13 @@
                         <!-- Authentication Links -->
                         @if (!Session::has('LoggedUser'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('auth.loginUser') }}">Inicio de sesión</a>
+                                <a class="nav-link @if(Route::currentRouteName() == 'auth.loginUser' || Route::currentRouteName() == 'auth.index') border border-secondary rounded-pill @endif" href="{{ route('auth.index') }}">Inicio de sesión</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('auth.registerUser') }}">Registrarse</a>
+                                <a class="nav-link @if(Route::currentRouteName() == 'auth.registerUser') border border-secondary rounded-pill @endif" href="{{ route('auth.registerUser') }}">Registrarse</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('auth.indexAdmin') }}">¿Eres administrador?</a>
                             </li>
                         @else
                             <li class="nav-item dropdown">
