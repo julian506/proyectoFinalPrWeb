@@ -62,13 +62,13 @@
                         <!-- Authentication Links -->
                         @if (Session::has('LoggedAdmin'))
                             <li class="nav-item">
-                                <a class="nav-link @if(Route::currentRouteName() == 'admin.panelPrincipal') border border-secondary rounded-pill @endif" href="{{ route('admin.panelPrincipal') }}">CRUD de Dispositivos</a>
+                                <a class="nav-link text-center @if(Route::currentRouteName() == 'admin.panelPrincipal') border border-secondary rounded-pill @endif" href="{{ route('admin.panelPrincipal') }}">CRUD de Dispositivos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link @if(Route::currentRouteName() == 'admin.usuarios.index') border border-secondary rounded-pill @endif" href="{{ route('admin.usuarios.index') }}">CRUD de Usuarios</a>
+                                <a class="nav-link text-center @if(Route::currentRouteName() == 'admin.usuarios.index') border border-secondary rounded-pill @endif" href="{{ route('admin.usuarios.index') }}">CRUD de Usuarios</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link @if(Route::currentRouteName() == 'admin.registrarNuevoAdmin') border border-secondary rounded-pill @endif" href="{{ route('admin.registrarNuevoAdmin') }}">Registrar nuevo administrador</a>
+                                <a class="nav-link text-center @if(Route::currentRouteName() == 'admin.registrarNuevoAdmin') border border-secondary rounded-pill @endif" href="{{ route('admin.registrarNuevoAdmin') }}">Registrar nuevo administrador</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
