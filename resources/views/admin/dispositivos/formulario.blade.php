@@ -38,6 +38,7 @@
 
         <div class="col-md-12" id="B_Agregar">
             <input type="submit" class="btn btn-success" value="Agregar"><i class="bi bi-node-plus"></i>
+            <a href="{{ route('admin.panelPrincipal') }}" class="btn btn-danger"> Regresar</a>
         </div>
     </form>
 </div>
