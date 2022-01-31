@@ -96,8 +96,13 @@ class UsuarioController extends Controller
         $nuevaVenta->total = $dispositivo->precio*$request->cantidad;
         $nuevaVenta->save();
         $dispositivo->cantidad = $dispositivo->cantidad  - $request->cantidad;
-        $dispositivo->save();
-        return redirect()->route('usuario.index');
+        $save = $dispositivo->save();
+        if($save){
+            return redirect()->route('usuario.index')->with('success', '¡Felicitaciones! Ha comprado '.$nuevaVenta->cantidad.' unidad(es) de '.$dispositivo->nombre);
+        }else{
+            return redirect()->route('usuario.index')->with('fail', 'Ha habido un error con su compra, intente nuevamente.');
+        }
+
     }
 
     public function crearVenta($id){

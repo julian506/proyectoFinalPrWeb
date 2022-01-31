@@ -2,6 +2,19 @@
 
 @section('content')
 	<div class="container">
+        @if (Session::get('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ Session::get('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        @if (Session::get('fail'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ Session::get('fail') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
 		<div class="card">
 			<div class="card-header">
 				<h3 class="text-center">Catálogo</h3>
