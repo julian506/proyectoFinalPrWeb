@@ -117,6 +117,7 @@ class UsuarioController extends Controller
 
     public function registrarVenta(Request $request, $id){
         $dispositivo = Dispositivo::find($id);
+        $usuario = Usuario::find($request->idUsuario);
         $nuevaVenta = new Venta();
         $nuevaVenta->idUsuario = $request->idUsuario;
         $nuevaVenta->idDispositivo = $request->idDispositivo;
@@ -124,7 +125,11 @@ class UsuarioController extends Controller
         $nuevaVenta->total = $dispositivo->precio*$request->cantidad;
         $nuevaVenta->save();
         $dispositivo->cantidad = $dispositivo->cantidad  - $request->cantidad;
-        $dispositivo->save();
-        return redirect()->route('admin.usuarios.index');
+        $save = $dispositivo->save();
+        if($save){
+            return redirect()->route('admin.usuarios.index')->with('success', 'Se ha registrado una compra de '.$nuevaVenta->cantidad.' unidad(es) de '.$dispositivo->nombre.' a nombre del usuario '.$usuario->nombre.' '.$usuario->apellidos.'.');
+        }else{
+            return redirect()->route('admin.usuarios.index')->with('fail', 'Ha habido un error con la compra, intente nuevamente.');
+        }
     }
 }
