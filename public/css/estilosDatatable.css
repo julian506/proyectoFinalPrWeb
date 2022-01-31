@@ -15,6 +15,11 @@
     width: 100%;
 }
 
+#cantidadForm2 {
+    margin-bottom: 3%;
+    width: 50%;
+}
+
 #letrero {
     font-size: 130%;
 }
