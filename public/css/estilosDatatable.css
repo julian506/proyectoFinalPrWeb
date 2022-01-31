@@ -1,10 +1,20 @@
 /* Organizo estilos de la paginación del data-table */
 #example_paginate > ul > li.paginate_button.page-item {
-    background-color:rgb(209, 160, 160);
+    background-color:rgb(29, 49, 105);
+    -webkit-text-fill-color: rgb(217, 243, 243);
 }
 #example_paginate > ul > li.paginate_button.page-item a{
     text-decoration: none;
 }
 #imagenDT {
     width: 20%;
+}
+
+#cantidadForm {
+    margin-bottom: 3%;
+    width: 100%;
+}
+
+#letrero {
+    font-size: 130%;
 }
