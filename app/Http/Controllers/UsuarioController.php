@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Usuario;
 use App\Models\Dispositivo;
+use App\Models\Venta;
+use App\Http\Controllers\Session;
 use Illuminate\Http\Request;
+
 
 class UsuarioController extends Controller
 {
@@ -81,6 +84,36 @@ class UsuarioController extends Controller
         $usuario->apellidos = $request->apellidos;
         $usuario->correo = $request->correo;
         $usuario->save();
+        return redirect()->route('admin.usuarios.index');
+    }
+
+    public function crearVentaUsuario(Request $request, $id){
+        $nuevaVenta = new Venta();
+        $nuevaVenta->idUsuario = $request->session()->get('LoggedUser');
+        $nuevaVenta->idDispositivo = $request->idDispositivo;
+        $nuevaVenta->cantidad = $request->cantidad;
+        $nuevaVenta->save();
+        $dispositivo = Dispositivo::where('id', $id)->first(); //Así devolvería un solo valor
+        $dispositivo->cantidad = $dispositivo->cantidad  - $request->cantidad;
+        $dispositivo->save();
+        return redirect()->route('usuario.index');
+    }
+
+    public function crearVenta($id){
+        $dispositivos = Dispositivo::all();
+        $usuario = Usuario::where('id', $id)->first(); //Así devolvería un solo valor
+        return view('admin.dispositivos.listaDispositivos', compact('dispositivos', 'usuario'));
+    }
+
+    public function registrarVenta(Request $request, $id){
+        $nuevaVenta = new Venta();
+        $nuevaVenta->idUsuario = $request->idUsuario;
+        $nuevaVenta->idDispositivo = $request->idDispositivo;
+        $nuevaVenta->cantidad = $request->cantidad;
+        $nuevaVenta->save();
+        $dispositivo = Dispositivo::find($id);
+        $dispositivo->cantidad = $dispositivo->cantidad  - $request->cantidad;
+        $dispositivo->save();
         return redirect()->route('admin.usuarios.index');
     }
 }
