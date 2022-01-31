@@ -126,7 +126,7 @@ class CreateDispositivosTable extends Migration
             $dispositivo->precio = $data['precio'];
             $dispositivo->cantidad = $data['cantidad'];
             $dispositivo->imagen = $data['imagen'];
-            $dispositivo->textoAlternativoImagen = $data['imagen'];
+            $dispositivo->textoAlternativoImagen = $data['textoAlternativoImagen'];
             $dispositivo->save();
         }
     }
