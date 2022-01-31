@@ -3,7 +3,14 @@
     background-color:rgb(29, 49, 105);
     -webkit-text-fill-color: rgb(217, 243, 243);
 }
+#dataTableVentasPorUsuario_paginate > ul > li.paginate_button.page-item {
+    background-color:rgb(29, 49, 105);
+    -webkit-text-fill-color: rgb(217, 243, 243);
+}
 #example_paginate > ul > li.paginate_button.page-item a{
+    text-decoration: none;
+}
+#dataTableVentasPorUsuario_paginate > ul > li.paginate_button.page-item a{
     text-decoration: none;
 }
 #imagenDT {
