@@ -18,7 +18,7 @@ class DispositivoController extends Controller
     {
         //Para traer todos los productos de la BD:
         $dispositivos = Dispositivo::all();
-        return view('admin/dispositivos.index')->with('dispositivos', $dispositivos);
+        return view('admin.dispositivos.index')->with('dispositivos', $dispositivos);
     }
 
     /**
@@ -29,7 +29,7 @@ class DispositivoController extends Controller
     public function create()
     {
         //Sirve para redireccionarme a la vista
-        return view("admin/dispositivos.guardar");
+        return view("admin.dispositivos.guardar");
     }
 
     /**
@@ -48,9 +48,13 @@ class DispositivoController extends Controller
         if($request->hasFile('imagen')){
             $dispositivo->imagen = $request->file('imagen')->store('uploads','public');
         }
-        $dispositivo->save();
+        $save = $dispositivo->save();
 
-        return redirect()->route('dispositivos.index');
+        if($save){
+            return redirect()->route('dispositivos.index')->with('success', 'El dispositivo '.$dispositivo->nombre.' ha sido agregado con éxito.');
+        }else{
+            return redirect()->route('dispositivos.index')->with('fail', 'Ha ocurrido un error agregando el dispositivo '.$dispositivo->nombre.'.');
+        }
     }
 
     /**
@@ -73,7 +77,7 @@ class DispositivoController extends Controller
     public function edit($id)
     {
         $dispositivo = Dispositivo::find($id);
-        return view('admin/dispositivos.editar')->with('dispositivo',$dispositivo);
+        return view('admin.dispositivos.editar')->with('dispositivo',$dispositivo);
     }
 
     /**
@@ -104,9 +108,13 @@ class DispositivoController extends Controller
             //Suba la NUEVA foto a la carpeta uploads en public y en el JSON guarde la dirección de la foto
             $dispositivo->imagen = $request->file('imagen')->store('uploads', 'public');
         }
-        $dispositivo->save();
+        $save = $dispositivo->save();
+        if($save){
+            return redirect()->route('admin.panelPrincipal')->with('success', 'El dispositivo '.$dispositivo->nombre.' ha sido editado con éxito.');
+        }else{
+            return redirect()->route('admin.panelPrincipal')->with('fail', 'Ha ocurrido un error editando el dispositivo '.$dispositivo->nombre.'.');
+        }
 
-        return redirect()->route('dispositivos.index');
     }
 
     /**
