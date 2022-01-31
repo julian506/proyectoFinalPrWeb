@@ -24,7 +24,14 @@
                                     <p class="card-text">Cantidad disponible: {{ $dispositivo->cantidad }}</p>
                                     <p >Precio en dólares: $<span id = "precioDolares">{{ $dispositivo->precio }}</span></p>
                                     <p class="card-text">Precio en pesos: $ <span id="precioPesos"></span></p>
-                                    <a href="#" class="btn btn-success mt-auto" style="width: 100%">Comprar</a>
+                                    <form action="{{ route('usuarios.crearVentaUsuario', $dispositivo->id) }}" method="get">
+                                        {{-- <input type="text" value = '{{ Session::get('LoggedUser') }}' name="idUsuario" hidden> --}}
+                                        <input type="text" value = '{{ $dispositivo->id }}' name="idDispositivo" hidden>
+                                        <input type="number" placeholder="Cantidad" name="cantidad" id='cantidad' max="{{ $dispositivo->cantidad }}" min="1" required>
+                                        @csrf
+                                        <input class="btn btn-success" type="submit" value="Comprar">
+                                    </form>
+                                    {{-- <a href="{{ route('admin.usuarios.crearVentaUsuario', $dispositivo->i) }}" class="btn btn-success mt-auto" style="width: 100%">Comprar</a> --}}
                                 </div>
                             </div>
                         </div>
