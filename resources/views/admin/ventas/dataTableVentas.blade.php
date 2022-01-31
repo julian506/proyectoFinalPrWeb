@@ -42,9 +42,7 @@
                     </td>
                     <td>
                         @php
-                            $total = $dispositivo->precio * $venta->cantidad;
-                            $suma = $suma + $total;
-                            echo $total;
+                            echo $venta->total;
                         @endphp
                     </td>
                     </td>
