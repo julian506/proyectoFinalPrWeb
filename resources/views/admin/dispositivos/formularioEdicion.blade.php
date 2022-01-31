@@ -35,11 +35,12 @@
 
         <div class="col-md-8">
             <label for="ArchivoIMG" class="form-label">Texto alternativo de la imagen</label>
-            <input type="text" class="form-control" id="ArchivoIMG" name="textoAlternativoImagen" required>
+            <input type="text" class="form-control" id="ArchivoIMG" name="textoAlternativoImagen" value = {{ $dispositivo->textoAlternativoImagen }} required>
         </div>
 
         <div class="col-md-12" id="B_Agregar">
             <input type="submit" class="btn btn-success" value="Editar"><i class="bi bi-node-plus"></i>
+            <a href="{{ route('admin.panelPrincipal') }}" class="btn btn-danger"> Regresar</a>
         </div>
     </form>
 </div>
