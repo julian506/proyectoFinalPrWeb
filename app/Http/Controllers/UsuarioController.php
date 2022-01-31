@@ -55,9 +55,9 @@ class UsuarioController extends Controller
         $save = $usuario->save();
 
         if($save){
-            return redirect()->route('admin.usuarios.index');
+            return redirect()->route('admin.usuarios.index')->with('success', 'Se ha creado el usuario con éxito.');
         }else{
-            return back()->with('fail', 'Ha ocurrido un error creando el usuario');
+            return redirect()->route('admin.usuarios.index')->with('fail', 'Ha ocurrido un error creando al usuario. Inténtelo nuevamente.');
         }
     }
     function destroy($correo){
@@ -83,8 +83,12 @@ class UsuarioController extends Controller
         $usuario->nombre = $request->nombre;
         $usuario->apellidos = $request->apellidos;
         $usuario->correo = $request->correo;
-        $usuario->save();
-        return redirect()->route('admin.usuarios.index');
+        $save = $usuario->save();
+        if($save){
+            return redirect()->route('admin.usuarios.index')->with('success', 'Se ha editado el usuario con éxito.');
+        }else{
+            return redirect()->route('admin.usuarios.index')->with('fail', 'Ha ocurrido un error editando al usuario. Inténtelo nuevamente.');
+        }
     }
 
     public function crearVentaUsuario(Request $request, $id){
