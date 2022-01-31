@@ -6,6 +6,7 @@ use App\Http\Controllers\AdministradorController;
 use App\Http\Controllers\AutenticacionController;
 use App\Http\Controllers\AutenticacionAdminController;
 use App\Http\Controllers\DispositivoController;
+use App\Http\Controllers\VentaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::group(['middleware' => ['AutenticacionCheck']], function () {
     Route::get('/', [AutenticacionController::class, 'index'])->name('auth.index');
     Route::get('/auth/login', [AutenticacionController::class, 'login'])->name('auth.loginUser');
     Route::get('/auth/register', [AutenticacionController::class, 'register'])->name('auth.registerUser');
+    Route::get('admin/usuarios/crearVentaUsuario/{id}', [UsuarioController::class,'crearVentaUsuario'])->name('usuarios.crearVentaUsuario');
     Route::get('/usuario/index', [UsuarioController::class, 'usuarioIndex'])->name('usuario.index'); //Lleva al index a un usuario autenticado
 });
 
@@ -39,24 +41,16 @@ Route::group(['middleware' => ['AutenticacionAdminCheck']], function () {
     Route::get('/admin/registrarAdmin', [AdministradorController::class, 'registrarAdmin'])->name('admin.registrarNuevoAdmin');
     Route::post('/admin/saveAdmin', [AutenticacionAdminController::class, 'saveAdmin'])->name('auth.saveAdmin');
     Route::resource('admin/dispositivos',DispositivoController::class);
+
     Route::get('admin/usuarios', [UsuarioController::class,  'index'])->name('admin.usuarios.index');//AX-Ruta para ir al crud de usuarios
     Route::get('admin/usuarios/crear', [UsuarioController::class,  'create'])->name('admin.usuarios.crear');
     Route::post('admin/usuarios', [UsuarioController::class,  'store'])->name('admin.usuarios.guardar');
     Route::delete('admin/usuarios/{id}', [UsuarioController::class,  'destroy'])->name('admin.usuarios.destroy');
     Route::get('admin/usuarios/editar/{id}', [UsuarioController::class,  'edit'])->name('usuarios.edit');
     Route::put('admin/usuarios/editar/{id}', [UsuarioController::class,  'update'])->name('usuarios.update');
-
+    //Ruta para las ventas
+    Route::get('admin/ventas', [VentaController::class,'index'])->name('admin.ventas.index');
+    Route::get('admin/dispositivos/listaDispositivos', [UsuarioController::class,  'index'])->name('admin.dispositivos.listaDispositivos');
+    Route::get('admin/usuarios/crearVenta/{id}', [UsuarioController::class,'crearVenta'])->name('admin.usuarios.crearVenta');
+    Route::get('admin/usuarios/registrarVenta/{id}', [UsuarioController::class,'registrarVenta'])->name('admin.usuarios.registrarVenta');
 });
-
-
-// Rutas para el CRUD de dispositivos
-// Route::get('/', [DispositivoController::class,'index']);
-
-
-// Route::get('/clientes/create', [ClienteController::class,'create'])->name('clientes.create');
-// Route::post('/clientes/store', [ClienteController::class,'store'])->name('clientes.store');
-// Route::get('/clientes/edit/{id}', [ClienteController::class,'edit'])->name('clientes.edit');
-// Route::patch('/clientes/update/{id}', [ClienteController::class,'update'])->name('clientes.update');
-// Route::delete('/clientes/destroy/{id}', [ClienteController::class,'destroy'])->name('clientes.destroy');
-// Route::get('/clientes/crearVenta/{id}', [ClienteController::class,'crearVenta'])->name('clientes.crearVenta');
-// Route::post('/clientes/registrarVenta', [ClienteController::class,'registrarVenta'])->name('clientes.registrarVenta');
