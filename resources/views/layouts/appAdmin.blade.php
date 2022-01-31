@@ -68,6 +68,9 @@
                                 <a class="nav-link text-center @if(Route::currentRouteName() == 'admin.usuarios.index') border border-secondary rounded-pill @endif" href="{{ route('admin.usuarios.index') }}">CRUD de Usuarios</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link text-center @if(Route::currentRouteName() == 'admin.usuarios.ventas') border border-secondary rounded-pill @endif" href="{{ route('admin.ventas.index') }}">Reporte de Ventas</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-center @if(Route::currentRouteName() == 'admin.registrarNuevoAdmin') border border-secondary rounded-pill @endif" href="{{ route('admin.registrarNuevoAdmin') }}">Registrar nuevo administrador</a>
                             </li>
                             <li class="nav-item dropdown">
