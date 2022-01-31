@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Venta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VentaController extends Controller
 {
@@ -15,7 +16,8 @@ class VentaController extends Controller
     public function index()
     {
         $ventas = Venta::all();
-        return view('admin.ventas.index')->with('ventas',$ventas);//Me retorna la vista de ventas y que valla con las ventas de la BD
+        $ventasPorUsuario = DB::table('ventas')->select(DB::raw('idUsuario, count("idUsuario") as cantidadVentas'))->groupBy('idUsuario')->get();
+        return view('admin.ventas.index')->with('ventas',$ventas)->with('ventasPorUsuario', $ventasPorUsuario);//Me retorna la vista de ventas y que valla con las ventas de la BD
     }
 
     /**
