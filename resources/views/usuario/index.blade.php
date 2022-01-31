@@ -27,7 +27,7 @@
                                     <form action="{{ route('usuarios.crearVentaUsuario', $dispositivo->id) }}" method="get">
                                         {{-- <input type="text" value = '{{ Session::get('LoggedUser') }}' name="idUsuario" hidden> --}}
                                         <input type="text" value = '{{ $dispositivo->id }}' name="idDispositivo" hidden>
-                                        <input type="number" placeholder="Cantidad" name="cantidad" id='cantidad' max="{{ $dispositivo->cantidad }}" min="1" required>
+                                        <input type="number" placeholder="Cantidad" name="cantidad" id='cantidadForm2' max="{{ $dispositivo->cantidad }}" min="1" required>
                                         @csrf
                                         <input class="btn btn-success" type="submit" value="Comprar">
                                     </form>
