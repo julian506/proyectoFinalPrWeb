@@ -29,7 +29,7 @@
                                         <input type="text" value = '{{ $dispositivo->id }}' name="idDispositivo" hidden>
                                         <input type="number" placeholder="Cantidad" name="cantidad" id='cantidadForm2' max="{{ $dispositivo->cantidad }}" min="1" required>
                                         @csrf
-                                        <input class="btn btn-success" type="submit" value="Comprar">
+                                        <input class="btn btn-success" type="submit" value="Comprar" onclick="return confirm('¿Estás seguro que deseas comprar: {{ $dispositivo->nombre }}?')">
                                     </form>
                                     {{-- <a href="{{ route('admin.usuarios.crearVentaUsuario', $dispositivo->i) }}" class="btn btn-success mt-auto" style="width: 100%">Comprar</a> --}}
                                 </div>
