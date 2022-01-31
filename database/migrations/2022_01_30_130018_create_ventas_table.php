@@ -18,6 +18,7 @@ class CreateVentasTable extends Migration
             $table->unsignedBigInteger('idUsuario');
             $table->unsignedBigInteger('idDispositivo');
             $table->integer('cantidad');
+            $table->decimal('total');
             $table->foreign('idUsuario')->references('id')->on('usuarios');
             $table->foreign('idDispositivo')->references('id')->on('dispositivos');
             $table->timestamps();

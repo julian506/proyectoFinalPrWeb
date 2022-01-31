@@ -88,12 +88,13 @@ class UsuarioController extends Controller
     }
 
     public function crearVentaUsuario(Request $request, $id){
+        $dispositivo = Dispositivo::where('id', $id)->first(); //Así devolvería un solo valor
         $nuevaVenta = new Venta();
         $nuevaVenta->idUsuario = $request->session()->get('LoggedUser');
         $nuevaVenta->idDispositivo = $request->idDispositivo;
         $nuevaVenta->cantidad = $request->cantidad;
+        $nuevaVenta->total = $dispositivo->precio*$request->cantidad;
         $nuevaVenta->save();
-        $dispositivo = Dispositivo::where('id', $id)->first(); //Así devolvería un solo valor
         $dispositivo->cantidad = $dispositivo->cantidad  - $request->cantidad;
         $dispositivo->save();
         return redirect()->route('usuario.index');
@@ -106,12 +107,13 @@ class UsuarioController extends Controller
     }
 
     public function registrarVenta(Request $request, $id){
+        $dispositivo = Dispositivo::find($id);
         $nuevaVenta = new Venta();
         $nuevaVenta->idUsuario = $request->idUsuario;
         $nuevaVenta->idDispositivo = $request->idDispositivo;
         $nuevaVenta->cantidad = $request->cantidad;
+        $nuevaVenta->total = $dispositivo->precio*$request->cantidad;
         $nuevaVenta->save();
-        $dispositivo = Dispositivo::find($id);
         $dispositivo->cantidad = $dispositivo->cantidad  - $request->cantidad;
         $dispositivo->save();
         return redirect()->route('admin.usuarios.index');
