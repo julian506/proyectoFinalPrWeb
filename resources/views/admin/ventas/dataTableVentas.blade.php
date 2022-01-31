@@ -42,6 +42,7 @@
                     </td>
                     <td>
                         @php
+                            $suma += $venta->total;
                             echo $venta->total;
                         @endphp
                     </td>
