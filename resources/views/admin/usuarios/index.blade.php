@@ -40,7 +40,11 @@
 										@csrf
 										<input class="btn btn-danger" type="submit" onclick="return confirm('¿Quieres borrar?')" value="Borrar">
 									</form>
-
+                                    <a href=" {{ route('admin.usuarios.crearVenta', $usuario->id) }}">
+                                        <button class="btn btn-success">
+                                            Registrar venta
+                                        </button>
+                                    </a>
 								</td>
 
 							</tr>
