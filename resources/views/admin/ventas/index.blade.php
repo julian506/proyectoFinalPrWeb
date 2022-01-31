@@ -17,11 +17,19 @@
         @endif
         <div class="card">
             <div class="card-header">
-                <h3 class="text-center">Panel de administrador</h3>
+                <h3 class="text-center">Reporte de ventas</h3>
             </div>
             <div class="card-body">
                 <h3 class="text-center"> N° Ventas: {{ count($ventas) }}</h3>
-                    @include('admin/ventas.dataTableVentas')
+                @include('admin.ventas.dataTableVentas')
+            </div>
+        </div>
+        <div class="card mt-5">
+            <div class="card-header">
+                <h3 class="text-center">Reporte de ventas por usuario</h3>
+            </div>
+            <div class="card-body">
+                @include('admin.ventas.dataTableVentasPorUsuario')
             </div>
         </div>
     </div>
