@@ -31,6 +31,11 @@
             <input type="file" class="form-control" id="ArchivoIMG" name="imagen" required>
         </div>
 
+        <div class="col-md-8">
+            <label for="ArchivoIMG" class="form-label">Texto alternativo de la imagen</label>
+            <input type="text" class="form-control" id="ArchivoIMG" name="textoAlternativoImagen" required>
+        </div>
+
         <div class="col-md-12" id="B_Agregar">
             <input type="submit" class="btn btn-success" value="Agregar"><i class="bi bi-node-plus"></i>
         </div>

@@ -48,6 +48,7 @@ class DispositivoController extends Controller
         if($request->hasFile('imagen')){
             $dispositivo->imagen = $request->file('imagen')->store('uploads','public');
         }
+        $dispositivo->textoAlternativoImagen = $request->textoAlternativoImagen;
         $dispositivo->save();
 
         return redirect()->route('dispositivos.index');
@@ -104,6 +105,7 @@ class DispositivoController extends Controller
             //Suba la NUEVA foto a la carpeta uploads en public y en el JSON guarde la dirección de la foto
             $dispositivo->imagen = $request->file('imagen')->store('uploads', 'public');
         }
+        $dispositivo->textoAlternativoImagen = $request->textoAlternativoImagen;
         $dispositivo->save();
 
         return redirect()->route('dispositivos.index');

@@ -24,7 +24,7 @@
                     <td>{{ $dispositivo->descripcion }}</td>
                     <td>{{ $dispositivo->precio }}</td>
                     <td>{{ $dispositivo->cantidad }}</td>
-                    <td><img id="imagenDT" src="{{ asset('storage').'/'.$dispositivo->imagen}}" alt=""></td>
+                    <td><img id="imagenDT" src="{{ asset('storage').'/'.$dispositivo->imagen}}" alt="{{ $dispositivo->textoAlternativoImagen }}"></td>
                     <td>
                         <a href="{{ route('dispositivos.edit', $dispositivo->id) }}">
                             <button class="btn btn-primary">

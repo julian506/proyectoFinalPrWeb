@@ -42,7 +42,7 @@
                                     <td>{{ $dispositivo->descripcion }}</td>
                                     <td>{{ $dispositivo->precio }}</td>
                                     <td>{{ $dispositivo->cantidad }}</td>
-                                    <td><img id="imagenDT" src="{{ asset('storage').'/'.$dispositivo->imagen}}" alt=""></td>
+                                    <td><img id="imagenDT" src="{{ asset('storage').'/'.$dispositivo->imagen}}" alt="{{ $dispositivo->textoAlternativoImagen }}"></td>
                                     <td>
                                         <form action="{{ route('admin.usuarios.registrarVenta', $dispositivo->id) }}" method="get">
                                             <input type="text" value = '{{ $usuario->id }}' name="idUsuario" hidden>

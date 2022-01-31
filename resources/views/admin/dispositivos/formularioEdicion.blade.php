@@ -6,7 +6,7 @@
         @method('PUT')
         @csrf
         <div class="col-md-8">
-            <label for="validationCustom02" class="form-label">Nombre del Producto</label>
+            <label for="validationCustom02" class="form-label">Nombre del Dispositivo</label>
             <input type="text" class="form-control" id="validationCustom02" name="nombre" placeholder="Nombre" required value="{{ $dispositivo->nombre }}">
         </div>
 
@@ -31,6 +31,11 @@
             <p>Esta es la imagen actual que tienes, si deseas cambiarla selecciona un nuevo archivo, de lo contrario, no selecciones nada</p>
             <img id="imagenDT" src="{{ asset('storage').'/'.$dispositivo->imagen}}" alt="Imagen">
             <input type="file" class="form-control" id="ArchivoIMG" name="imagen" placeholder="">
+        </div>
+
+        <div class="col-md-8">
+            <label for="ArchivoIMG" class="form-label">Texto alternativo de la imagen</label>
+            <input type="text" class="form-control" id="ArchivoIMG" name="textoAlternativoImagen" required>
         </div>
 
         <div class="col-md-12" id="B_Agregar">
