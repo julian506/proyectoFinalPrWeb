@@ -48,6 +48,7 @@ class DispositivoController extends Controller
         if($request->hasFile('imagen')){
             $dispositivo->imagen = $request->file('imagen')->store('uploads','public');
         }
+        $dispositivo->textoAlternativoImagen = $request->textoAlternativoImagen;
         $save = $dispositivo->save();
 
         if($save){
@@ -108,13 +109,13 @@ class DispositivoController extends Controller
             //Suba la NUEVA foto a la carpeta uploads en public y en el JSON guarde la dirección de la foto
             $dispositivo->imagen = $request->file('imagen')->store('uploads', 'public');
         }
+        $dispositivo->textoAlternativoImagen = $request->textoAlternativoImagen;
         $save = $dispositivo->save();
         if($save){
             return redirect()->route('admin.panelPrincipal')->with('success', 'El dispositivo '.$dispositivo->nombre.' ha sido editado con éxito.');
         }else{
             return redirect()->route('admin.panelPrincipal')->with('fail', 'Ha ocurrido un error editando el dispositivo '.$dispositivo->nombre.'.');
         }
-
     }
 
     /**

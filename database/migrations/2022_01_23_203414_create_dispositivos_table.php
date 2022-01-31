@@ -21,6 +21,7 @@ class CreateDispositivosTable extends Migration
             $table->string('precio');
             $table->integer('cantidad');
             $table->string('imagen');
+            $table->string('textoAlternativoImagen');
             $table->timestamps();
         });
 
@@ -31,6 +32,7 @@ class CreateDispositivosTable extends Migration
                 'precio' => 750,
                 'cantidad' => 10,
                 'imagen' => 'uploads/pW0XDrx6TVvrXtwJcVLZSTsg2SGERdDFijbebMB3.jpg',
+                'textoAlternativoImagen' => 'Figura del Play Station 5'
             ],
             [
                 'nombre' => 'Xbox Series X',
@@ -38,6 +40,7 @@ class CreateDispositivosTable extends Migration
                 'precio' => 630,
                 'cantidad' => 17,
                 'imagen' => 'uploads/fCCDRNtyzh4XxmG5eDwpLwptVsawq2Juh8qKtrqg.jpg',
+                'textoAlternativoImagen' => 'Figura del Xbox Series X'
             ],
             [
                 'nombre' => 'Xiaomi Redmi Note 9',
@@ -45,6 +48,7 @@ class CreateDispositivosTable extends Migration
                 'precio' => 217,
                 'cantidad' => 30,
                 'imagen' => 'uploads/2yPmvnmkLPLn1g96ShNJxk6nyazOSjNXICmeVICS.jpg',
+                'textoAlternativoImagen' => 'Figura del Xiami Redmi Note 9'
             ],
             [
                 'nombre' => 'Amazon Kindle Fire 8',
@@ -52,6 +56,7 @@ class CreateDispositivosTable extends Migration
                 'precio' => 92,
                 'cantidad' => 33,
                 'imagen' => 'uploads/ACCDfByeweYsy5VfSnsNkemyx4XD1S0zgj35Nrb9.jpg',
+                'textoAlternativoImagen' => 'Figura del Amazon Kindle Fire 8'
             ],
             [
                 'nombre' => 'Mouse Inalámbrico Lenovo',
@@ -59,6 +64,7 @@ class CreateDispositivosTable extends Migration
                 'precio' => 11,
                 'cantidad' => 25,
                 'imagen' => 'uploads/n2ohGNjJt55Yg0vuGUh2eWmIOVtUM0lxpGek1F1M.jpg',
+                'textoAlternativoImagen' => 'Figura del Mouse Inalámbrico Lenovo'
             ],
             [
                 'nombre' => 'Portátil Lenovo Ryzen 7 16gb 512gb Ssd Legion 5 Pro 16 Grey',
@@ -66,6 +72,7 @@ class CreateDispositivosTable extends Migration
                 'precio' => 1883,
                 'cantidad' => 5,
                 'imagen' => 'uploads/TXP9Q8wfOj67rCzlSvCLnU2uKq6KfK9a41RgTXLb.jpg',
+                'textoAlternativoImagen' => 'Figura del Portátil Lenovo Ryzen 7 16gb 512gb'
             ],
             [
                 'nombre' => 'Memoria Usb Maxell Metal 64gb',
@@ -73,6 +80,7 @@ class CreateDispositivosTable extends Migration
                 'precio' => 8,
                 'cantidad' => 50,
                 'imagen' => 'uploads/uBuRgjgUiuD9LF3OUxjiD38SnsjuBxong1hZOHdv.jpg',
+                'textoAlternativoImagen' => 'Figura de la memoria USB Maxell'
             ],
             // [
             //     'nombre' => '',
@@ -118,6 +126,7 @@ class CreateDispositivosTable extends Migration
             $dispositivo->precio = $data['precio'];
             $dispositivo->cantidad = $data['cantidad'];
             $dispositivo->imagen = $data['imagen'];
+            $dispositivo->textoAlternativoImagen = $data['imagen'];
             $dispositivo->save();
         }
     }
