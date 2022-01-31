@@ -22,7 +22,7 @@
 
         <div class="col-md-8">
             <label for="validationCustom02" class="form-label">Cantidad</label>
-            <input type="number" class="form-control" id="validationCustom02" name="cantidad" placeholder="Cantidad" required>
+            <input type="number" class="form-control" id="validationCustom02" name="cantidad" placeholder="Cantidad" value = {{ $dispositivo->cantidad }} required>
         </div>
 
 
