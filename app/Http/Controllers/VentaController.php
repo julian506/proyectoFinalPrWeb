@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade as PDF;
 
+use App\Exports\VentasExport;
+use App\Models\Usuario;
+use Maatwebsite\Excel\Facades\Excel;
+
 class VentaController extends Controller
 {
     /**
@@ -26,6 +30,10 @@ class VentaController extends Controller
         // return view('admin.ventas.reporteVentasPorUsuario', compact('ventasPorUsuario'));
         $pdf = PDF::loadview('admin.ventas.reporteVentasPorUsuario', compact('ventasPorUsuario'));
         return $pdf->download('reporte.pdf');
+    }
+
+    public function generarExcelReporteVentas(){
+        return Excel::download(new VentasExport, 'reporteVentasPorUsuario.xlsx');
     }
 
     /**
