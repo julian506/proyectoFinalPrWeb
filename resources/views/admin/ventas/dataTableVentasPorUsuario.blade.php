@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container mt-3 text-center">
     @php
         $suma = 0;
     @endphp
