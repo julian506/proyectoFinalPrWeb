@@ -31,7 +31,7 @@
             </div>
             <div class="card-body">
                 <a href="{{ route('admin.usuarios.reporteVentas') }}" class="btn btn-success">Descargar Reporte PDF</a>
-                <a href="{{ route('admin.usuarios.reporteVentas') }}" class="btn btn-success">Descargar Reporte Excel</a>
+                <a href="{{ route('admin.usuarios.reporteVentasExcel') }}" class="btn btn-success">Descargar Reporte Excel</a>
                 @include('admin.ventas.dataTableVentasPorUsuario')
             </div>
         </div>
