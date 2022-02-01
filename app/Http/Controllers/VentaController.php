@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Venta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class VentaController extends Controller
 {
@@ -18,6 +19,13 @@ class VentaController extends Controller
         $ventas = Venta::all();
         $ventasPorUsuario = DB::table('ventas')->select(DB::raw('idUsuario, count("idUsuario") as cantidadVentas'))->groupBy('idUsuario')->get();
         return view('admin.ventas.index')->with('ventas',$ventas)->with('ventasPorUsuario', $ventasPorUsuario);//Me retorna la vista de ventas y que valla con las ventas de la BD
+    }
+
+    public function generarPDFReporteVentas(){
+        $ventasPorUsuario = DB::table('ventas')->select(DB::raw('idUsuario, count("idUsuario") as cantidadVentas'))->groupBy('idUsuario')->get();
+        // return view('admin.ventas.reporteVentasPorUsuario', compact('ventasPorUsuario'));
+        $pdf = PDF::loadview('admin.ventas.reporteVentasPorUsuario', compact('ventasPorUsuario'));
+        return $pdf->download('reporte.pdf');
     }
 
     /**

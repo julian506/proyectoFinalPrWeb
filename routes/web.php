@@ -53,4 +53,5 @@ Route::group(['middleware' => ['AutenticacionAdminCheck']], function () {
     Route::get('admin/dispositivos/listaDispositivos', [UsuarioController::class,  'index'])->name('admin.dispositivos.listaDispositivos');
     Route::get('admin/usuarios/crearVenta/{id}', [UsuarioController::class,'crearVenta'])->name('admin.usuarios.crearVenta');
     Route::get('admin/usuarios/registrarVenta/{id}', [UsuarioController::class,'registrarVenta'])->name('admin.usuarios.registrarVenta');
+    Route::get('admin/usuarios/descargarReportesVentas', [VentaController::class,'generarPDFReporteVentas'])->name('admin.usuarios.reporteVentas');
 });

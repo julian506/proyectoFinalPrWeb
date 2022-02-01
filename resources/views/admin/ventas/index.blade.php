@@ -27,8 +27,11 @@
         <div class="card mt-5">
             <div class="card-header">
                 <h3 class="text-center">Reporte de ventas por usuario</h3>
+
             </div>
             <div class="card-body">
+                <a href="{{ route('admin.usuarios.reporteVentas') }}" class="btn btn-success">Descargar Reporte PDF</a>
+                <a href="{{ route('admin.usuarios.reporteVentas') }}" class="btn btn-success">Descargar Reporte Excel</a>
                 @include('admin.ventas.dataTableVentasPorUsuario')
             </div>
         </div>
