@@ -28,7 +28,7 @@ Route::group(['middleware' => ['AutenticacionCheck']], function () {
     Route::get('/auth/login', [AutenticacionController::class, 'login'])->name('auth.loginUser');
     Route::get('/auth/register', [AutenticacionController::class, 'register'])->name('auth.registerUser');
     Route::get('admin/usuarios/crearVentaUsuario/{id}', [UsuarioController::class,'crearVentaUsuario'])->name('usuarios.crearVentaUsuario');
-    Route::get('/usuario/index', [UsuarioController::class, 'usuarioIndex'])->name('usuario.index'); //Lleva al index a un usuario autenticado
+    Route::get('/usuario/index', [UsuarioController::class, 'catalogoUsuario'])->name('usuario.index'); //Lleva al index a un usuario autenticado
 });
 
 Route::post('/admin/auth/check', [AutenticacionAdminController::class, 'checkAdmin'])->name('admin.auth.check');

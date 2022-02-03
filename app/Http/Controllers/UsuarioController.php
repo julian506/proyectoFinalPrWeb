@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
-    function usuarioIndex(){
+    function catalogoUsuario(){
         $dispositivos = Dispositivo::where('cantidad', '>', 0)->paginate(6);
         return view('usuario.index', compact('dispositivos'));
     }
