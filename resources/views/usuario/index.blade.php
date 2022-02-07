@@ -66,12 +66,12 @@
 		</div>
 	</div>
     <script>
-        fetch('https://www.datos.gov.co/resource/32sa-8pi3.json?$limit=10000')
+        fetch('https://www.datos.gov.co/resource/mcec-87by.json')
         .then(respuestaAPI => respuestaAPI.json())
         .then(function(datosObtenidos){
             // console.log(datosObtenidos);
-            console.log("Valor del dolar hoy: ", datosObtenidos[datosObtenidos.length-1].valor);
-            valorDelDolarHoy = parseFloat(datosObtenidos[datosObtenidos.length-1].valor);
+            console.log("Valor del dolar hoy: ", datosObtenidos[0].valor);
+            valorDelDolarHoy = parseFloat(datosObtenidos[0].valor);
             cards = document.getElementsByClassName("texto-card");
             let dolares;
             let pesos;
