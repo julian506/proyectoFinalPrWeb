@@ -49,7 +49,11 @@ class AutenticacionController extends Controller
         $usuario->nombre = $request->nombre;
         $usuario->apellidos = $request->apellidos;
         $usuario->correo = $request->correo;
-        $usuario->password = Hash::make($request->password); //Encripto la contraseña
+        if($request->password != $request->passwordConfirm){
+            return back()->with('fail', 'Error, las contraseñas no coinciden');
+        }else{
+            $usuario->password = Hash::make($request->password); //Encripto la contraseña
+        }
 
         $save = $usuario->save();
 

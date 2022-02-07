@@ -1,6 +1,12 @@
 @extends('layouts.appAdmin')
 @section('content')
 <div class="container">
+    @if (Session::get('fail'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ Session::get('fail') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <div class="row justify-content-center">
         <div class="col-md-8">
 
