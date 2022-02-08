@@ -30,7 +30,7 @@
                         @endif
                         <div class="col col-md-4">
                             <div class="card card-productos"  style="height: 100%;">
-                                <img src="{{ asset('storage').'/'.$dispositivo->imagen }}" class="card-img-top" style="width: 100%" alt="{{ $dispositivo->textoAlternativoImagen }}">
+                                <img src="{{ asset('storage').'/'.$dispositivo->imagen }}" class="card-img-top imagenes_catalogo_" style="width: 100%" alt="{{ $dispositivo->textoAlternativoImagen }}">
                                 <div class="card-body d-flex flex-column texto-card">
                                     <h5 class="card-title">{{ $dispositivo->nombre }}</h5>
                                     <p class="card-text">Descripción: {{ $dispositivo->descripcion }}</p>
