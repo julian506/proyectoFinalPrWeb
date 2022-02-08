@@ -10,3 +10,7 @@
 8. Correr las migraciones con el comando ```php artisan migrate```. Vendrán algunos registros por defecto en la base de datos.
 9. Para el funcionamiento de las imágenes se debe correr el comando: ```php artisan storage:link```.
 10. Para correr el proyecto, se corre el comando ```php artisan serve```.
+11. Tener en cuenta: Si hay problemas con las imágenes, se pueden seguir los siguientes pasos:
+    * Ejecutar el comando: php artisan optimize:clear
+    * Borrar la carpeta storage, que está en public/storage
+    * Correr el comando php artisan storage:link. Después de eso se habrá creado nuevamente la carpeta storage en public/
