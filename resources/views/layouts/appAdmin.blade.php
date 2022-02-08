@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link  rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/316/316313.png"/>
     <link rel="stylesheet" href="{{ asset('css/estilosDatatable.css') }}">
     <!-- cdn's necesarios para las data tables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
