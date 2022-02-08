@@ -1,0 +1,37 @@
+/* Organizo estilos de la paginación del data-table */
+#example_paginate > ul > li.paginate_button.page-item {
+    background-color:rgb(29, 49, 105);
+    -webkit-text-fill-color: rgb(217, 243, 243);
+}
+#dataTableVentasPorUsuario_paginate > ul > li.paginate_button.page-item {
+    background-color:rgb(29, 49, 105);
+    -webkit-text-fill-color: rgb(217, 243, 243);
+}
+#example_paginate > ul > li.paginate_button.page-item a{
+    text-decoration: none;
+}
+#dataTableVentasPorUsuario_paginate > ul > li.paginate_button.page-item a{
+    text-decoration: none;
+}
+#imagenDT {
+    width: 20%;
+}
+
+#cantidadForm {
+    margin-bottom: 3%;
+    width: 100%;
+}
+
+#cantidadForm2 {
+    margin-bottom: 3%;
+    width: 50%;
+}
+
+#letrero {
+    font-size: 130%;
+}
+
+.imagenes_catalogo_ {
+    width: auto;
+    height: 80%;
+}
